@@ -42,11 +42,13 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <KeyboardAvoidingView
-                style={{ flex: 1, justifyContent: "center", padding: 32 }}
+            <KeyboardAvoidingView style={{ flex: 1, justifyContent: "center", padding: 32 }}
                 behavior="height"
                 enabled
             >
+                <Text style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>
+                    Bienvenue sur le Sandwich
+                </Text>
                 <Text style={{ textAlign: "center", fontSize: 20 }}>
                     {this.state.isSignup ? "Créer un compte" : "Connexion"}
                 </Text>
@@ -67,14 +69,7 @@ export default class Login extends React.Component {
                 <TouchableOpacity
                     onPress={() => this.setState({ isSignup: !this.state.isSignup })}
                 >
-                    <Text
-                        style={{
-                            textAlign: "center",
-                            fontSize: 20,
-                            marginTop: 32,
-                            color: "blue"
-                        }}
-                    >
+                    <Text style={{ textAlign: "center", fontSize: 20, marginTop: 32, color: "blue" }}>
                         {this.state.isSignup ? " Se connecter" : "Créer un compte"}
                     </Text>
                 </TouchableOpacity>
