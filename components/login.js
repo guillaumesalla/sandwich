@@ -24,7 +24,7 @@ export default class Login extends React.Component {
                 .then(args => {
                     console.log(args);
                     AsyncStorage.setItem("userId", args.user.uid);
-                    this.props.navigation.navigate("TabNav");
+                    this.props.navigation.navigate("Jambon");
                 })
                 .catch(error => Alert.alert("Error", error.message));
         } else {
@@ -34,7 +34,7 @@ export default class Login extends React.Component {
                 .then(args => {
                     console.log(args);
                     AsyncStorage.setItem("userId", args.user.uid);
-                    this.props.navigation.navigate("TabNav");
+                    this.props.navigation.navigate("Jambon");
                 })
                 .catch(error => Alert.alert("Error", error.message));
         }
@@ -48,7 +48,7 @@ export default class Login extends React.Component {
                 enabled
             >
                 <Text style={{ textAlign: "center", fontSize: 20 }}>
-                    {this.state.isSignup ? "Sign up" : "Connexion"}
+                    {this.state.isSignup ? "Créer un compte" : "Connexion"}
                 </Text>
                 <TextInput
                     value={this.state.email}
@@ -75,7 +75,7 @@ export default class Login extends React.Component {
                             color: "blue"
                         }}
                     >
-                        {this.state.isSignup ? "Sign in" : "Créer un compte"}
+                        {this.state.isSignup ? " Se connecter" : "Créer un compte"}
                     </Text>
                 </TouchableOpacity>
             </KeyboardAvoidingView>
