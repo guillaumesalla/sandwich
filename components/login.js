@@ -56,6 +56,7 @@ export default class Login extends React.Component {
                     value={this.state.email}
                     onChangeText={text => this.setState({ email: text })}
                     placeholder="Email"
+                    autoCapitalize="none"
                     style={{ paddingVertical: 16, marginVertical: 16, fontSize: 20 }}
                 />
                 <TextInput
@@ -65,7 +66,7 @@ export default class Login extends React.Component {
                     secureTextEntry
                     style={{ paddingVertical: 16, marginVertical: 16, fontSize: 20 }}
                 />
-                <Button onPress={this.tryLogin.bind(this)} title="Go faire des gros sandwichs" />
+                <Button onPress={this.tryLogin.bind(this)} title={this.state.isSignup ? "valider la création" : "valider la Connexion"} />
                 <TouchableOpacity
                     onPress={() => this.setState({ isSignup: !this.state.isSignup })}
                 >

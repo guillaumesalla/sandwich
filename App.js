@@ -18,7 +18,6 @@ var db = Firebase.database();
 const firestrore = Firebase.firestore();
 
 
-
 const Tab = createBottomTabNavigator();
 
 export default function App() {

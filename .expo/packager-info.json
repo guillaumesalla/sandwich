@@ -1,9 +1,9 @@
 {
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://24-9pq.guilakalash.sandwich.exp.direct",
+  "packagerNgrokUrl": "https://packager.24-9pq.guilakalash.sandwich.exp.direct",
+  "ngrokPid": 10732,
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 24564
+  "packagerPid": 14728
 }
