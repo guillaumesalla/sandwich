@@ -5,23 +5,40 @@ import firebase from '../firebaseInit.js'
 import '@firebase/firestore';
 
 function lePain() {
-    const [pain, setPain] = useState('');
     const ref = firebase.firestore().collection('pain');
+    const [pain, setPain] = useState('');
+    const [q, setQ] = useState('');
+
+    const [pains, setPains] = useState([]);
+
     async function addPain() {
         await ref.add({
             name: pain,
+            quantite: q,
         });
         setPain('');
+        setQ('');
     }
+
+    // async function getPain() {
+    //     db.collection("pain")
+    //         .doc(painId)
+    //         .onSnapshot(doc => {
+    //             const pains = [];
+    //             doc.data().pains.forEach(pain => {
+    //                 pains.push(pain);
+    //             });
+    //             setPains(pains);
+    //         }
+    //     }
+
     return (
         <View>
             <Appbar>
                 <Appbar.Content title={'Petits bouts de pains'} />
             </Appbar>
-            <ScrollView style={{ flex: 1 }}>
-                <Text>Liste de pains </Text>
-            </ScrollView>
-            <TextInput label={'New pain'} value={pain} onChangeText={setPain} />
+            <TextInput label={'nom du pain'} value={pain} onChangeText={pain => setPain(pain)} />
+            <TextInput label={'quantité'} value={q} onChangeText={q => setQ(q)} />
             <Button onPress={() => addPain()}>ajouter un petit bout de pain !</Button>
         </View>
     );
